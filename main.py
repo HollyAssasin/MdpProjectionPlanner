@@ -275,10 +275,11 @@ def solve_sas(sas_file, parser, gamma, projection):
 if __name__ == '__main__':
     gamma = 0.9
     file_single = 'transport_example.sas'
+    projection = [1, 2]
 
     with open(file_single) as f:
         lines = f.read().split('\n')
     parser = Parser(lines)
 
-    predicted_cost = solve_sas(file_single, parser, gamma, [1, 2])
+    predicted_cost = solve_sas(file_single, parser, gamma, projection)
     print(predicted_cost)
